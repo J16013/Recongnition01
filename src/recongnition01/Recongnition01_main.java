@@ -16,7 +16,7 @@ public class Recongnition01_main {
 		// TODO 自動生成されたメソッド・スタブ
 
 		VisualRecognition service = new VisualRecognition("2018-03-19");
-		service.setApiKey("6291b66ede0d70249a3746fb7d55a31f66aa68ab");
+		service.setApiKey("J16013");
 
 		DetectFacesOptions detectFacesOptions = null;
 		try {

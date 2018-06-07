@@ -17,11 +17,11 @@ Map<String, Object> lng = new HashMap<>();
 
 public MySQL() {
 	this.driver = "org.gjt.mm.mysql.Driver";
-    this.server = "sangi2018.sist.ac.jp";
-    this.dbname = "sangi2018";
+    this.server = "J16013";
+    this.dbname = "J16013";
     this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
-    this.user = "sangi2018";
-    this.password = "sistsangi2018";
+    this.user = "J16013";
+    this.password = "J16013";
     try {
         this.con = DriverManager.getConnection(url, user, password);
         this.stmt = con.createStatement ();
