@@ -17,11 +17,12 @@ Map<String, Object> lng = new HashMap<>();
 
 public MySQL() {
 	this.driver = "org.gjt.mm.mysql.Driver";
-    this.server = "J16013";
-    this.dbname = "J16013";
+    this.server = "sangi2018.sist.ac.jp";
+    this.dbname = "j16013";
     this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
-    this.user = "J16013";
-    this.password = "J16013";
+    this.user = "j16013";
+    this.password = "sistj16013";
+
     try {
         this.con = DriverManager.getConnection(url, user, password);
         this.stmt = con.createStatement ();
@@ -51,7 +52,7 @@ public ResultSet getID() {
 public void updateImage(int age_min, int age_max, double age_score, int gender, double gender_score) {
 	//keywordテーブルへ格納
 	StringBuffer buf = new StringBuffer();
-	buf.append("INSERT INTO  `faces` (`user_id`,`age_min` ,`age_max` ,`age_score` ,`gender` ,`gender_score`) VALUES ( 'J16013', " + age_min + ", "+ age_max +" , "+ age_score +" , "+ gender +" , "+ gender_score +"  );");
+	buf.append("INSERT INTO  `faces` (`age_min` ,`age_max` ,`age_score` ,`gender` ,`gender_score`) VALUES ( " + age_min + ", "+ age_max +" , "+ age_score +" , "+ gender +" , "+ gender_score +"  );");
 	String sql = buf.toString();
 	try {
 		stmt.execute (sql);
