@@ -49,10 +49,13 @@ public ResultSet getID() {
 	return rs;
 }
 
-public void updateImage(int age_min, int age_max, double age_score, int gender, double gender_score) {
+public void updateImage(int age_min, int age_max, double age_score, String gender, double gender_score, int image_id) {
 	//keywordテーブルへ格納
 	StringBuffer buf = new StringBuffer();
-	buf.append("INSERT INTO  `faces` (`age_min` ,`age_max` ,`age_score` ,`gender` ,`gender_score`) VALUES ( " + age_min + ", "+ age_max +" , "+ age_score +" , "+ gender +" , "+ gender_score +"  );");
+	int gender_id = -1;
+	if(gender.equals("MALE")) gender_id = 0;
+	else if(gender.equals("FEMALE")) gender_id = 1;
+	buf.append("UPDATE images SET  `age_min` = " + age_min + ", `age_max` = " + age_max + ", `age_score` = " + age_score + ", `gender` = " + gender_id + ", `gender_score` = " + gender_score + "   WHERE  id = " + image_id + ";");
 	String sql = buf.toString();
 	try {
 		stmt.execute (sql);
